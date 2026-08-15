@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   title: "ติดต่อ",
   description: `ติดต่อ ${siteConfig.name} — โทร อีเมล LINE Facebook และ GitHub ปรึกษาฟรี ไม่มีค่าใช้จ่าย`,
   alternates: { canonical: "/contact" },
+  openGraph: {
+    type: "website",
+    title: `ติดต่อ | ${siteConfig.name}`,
+    description: `ติดต่อ ${siteConfig.name} — โทร อีเมล LINE Facebook และ GitHub ปรึกษาฟรี ไม่มีค่าใช้จ่าย`,
+    url: `${siteConfig.url}/contact`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `ติดต่อ | ${siteConfig.name}`,
+    description: `ติดต่อ ${siteConfig.name} — โทร อีเมล LINE Facebook และ GitHub ปรึกษาฟรี ไม่มีค่าใช้จ่าย`,
+  },
 };
 
 export default function ContactPage() {
@@ -46,7 +57,7 @@ export default function ContactPage() {
     {
       icon: "GitHubIcon",
       label: "GitHub",
-      value: "anucha212224w-coder",
+      value: "anucha010340w-coder",
       href: siteConfig.github,
       note: "ดูโค้ดและผลงานตัวอย่าง",
     },

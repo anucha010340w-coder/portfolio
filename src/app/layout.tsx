@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContacts from "@/components/FloatingContacts";
 import WalkingAvatar from "@/components/WalkingAvatar";
-import { ProfessionalServiceSchema } from "@/components/Schema";
+import { ProfessionalServiceSchema, WebsiteSchema } from "@/components/Schema";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -48,11 +48,20 @@ export const metadata: Metadata = {
     title: `AW Dev | ${siteConfig.role}`,
     description: siteConfig.description,
     siteName: "AW Dev",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `AW Dev | ${siteConfig.role}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `AW Dev | ${siteConfig.role}`,
     description: siteConfig.description,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -123,6 +132,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ProfessionalServiceSchema />
+        <WebsiteSchema />
       </body>
     </html>
   );

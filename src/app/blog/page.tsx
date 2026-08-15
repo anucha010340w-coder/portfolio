@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   title: "บทความ",
   description: `บทความและความรู้จาก ${siteConfig.name} เกี่ยวกับการทำเว็บ ซอฟต์แวร์ SEO และธุรกิจดิจิทัล`,
   alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    title: `บทความ | ${siteConfig.name}`,
+    description: `บทความและความรู้จาก ${siteConfig.name} เกี่ยวกับการทำเว็บ ซอฟต์แวร์ SEO และธุรกิจดิจิทัล`,
+    url: `${siteConfig.url}/blog`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `บทความ | ${siteConfig.name}`,
+    description: `บทความและความรู้จาก ${siteConfig.name} เกี่ยวกับการทำเว็บ ซอฟต์แวร์ SEO และธุรกิจดิจิทัล`,
+  },
 };
 
 export default function BlogPage() {

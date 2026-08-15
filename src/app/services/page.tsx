@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   title: "บริการ",
   description: `บริการของ ${siteConfig.name} — รับทำเว็บแอพ เว็บไซต์ธุรกิจ แอพมือถือ ระบบ POS ระบบตามสั่ง และที่ปรึกษา IT`,
   alternates: { canonical: "/services" },
+  openGraph: {
+    type: "website",
+    title: `บริการ | ${siteConfig.name}`,
+    description: `บริการของ ${siteConfig.name} — รับทำเว็บแอพ เว็บไซต์ธุรกิจ แอพมือถือ ระบบ POS ระบบตามสั่ง และที่ปรึกษา IT`,
+    url: `${siteConfig.url}/services`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `บริการ | ${siteConfig.name}`,
+    description: `บริการของ ${siteConfig.name} — รับทำเว็บแอพ เว็บไซต์ธุรกิจ แอพมือถือ ระบบ POS ระบบตามสั่ง และที่ปรึกษา IT`,
+  },
 };
 
 export default function ServicesPage() {

@@ -7,14 +7,13 @@ export const siteConfig = {
   tagline: "สร้างเว็บแอพ เว็บธุรกิจ แอพมือถือ ระบบ POS และระบบตามสั่ง",
   description:
     "อนุชา วังราช — Full-Stack Developer รับทำเว็บแอพ เว็บไซต์ธุรกิจ แอพมือถือ ระบบ POS และระบบตามสั่ง พร้อมให้คำปรึกษาและดูแลหลังการขาย",
-  // ใส่โดเมนจริงเมื่อพร้อม (ตอนนี้ใช้ placeholder)
-  url: "https://anucha-dev.vercel.app",
+  url: "https://dgkingshop.com",
   email: "anucha.wangrat@outlook.com",
   phone: "0612373304",
   phoneDisplay: "061-237-3304",
   lineId: "anucha1997w",
   facebook: "https://web.facebook.com/profile.php?id=61592582261777",
-  github: "https://github.com/anucha212224w-coder",
+  github: "https://github.com/anucha010340w-coder",
   keywords: [
     "รับทำเว็บไซต์",
     "รับเขียนโปรแกรม",
@@ -26,6 +25,17 @@ export const siteConfig = {
     "Anucha Wangrat",
     "อนุชา วังราช",
     "รับทำเว็บธุรกิจ",
+    "รับทำเว็บ",
+    "รับทำแอพ",
+    "ระบบตามสั่ง",
+    "รับทำระบบ",
+    "POS System",
+    "Web Developer Thailand",
+    "Next.js Developer",
+    "React Developer",
+    "อนุชา วังราช Developer",
+    "AW Dev",
+    "dgkingshop",
   ],
 } as const;
 

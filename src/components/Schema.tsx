@@ -72,6 +72,29 @@ export function FAQSchema({ faqs }: { faqs: { q: string; a: string }[] }) {
   );
 }
 
+export function WebsiteSchema() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "AW Dev",
+    alternateName: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: "th-TH",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteConfig.url}/blog?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export function ProfessionalServiceSchema() {
   const data = {
     "@context": "https://schema.org",

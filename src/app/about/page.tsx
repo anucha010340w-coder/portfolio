@@ -9,6 +9,17 @@ export const metadata: Metadata = {
   title: "เกี่ยวกับผม",
   description: `รู้จัก ${siteConfig.name} — ${siteConfig.role} ผู้รับทำเว็บ แอพ และระบบตามสั่ง`,
   alternates: { canonical: "/about" },
+  openGraph: {
+    type: "profile",
+    title: `เกี่ยวกับผม | ${siteConfig.name}`,
+    description: `รู้จัก ${siteConfig.name} — ${siteConfig.role} ผู้รับทำเว็บ แอพ และระบบตามสั่ง`,
+    url: `${siteConfig.url}/about`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `เกี่ยวกับผม | ${siteConfig.name}`,
+    description: `รู้จัก ${siteConfig.name} — ${siteConfig.role} ผู้รับทำเว็บ แอพ และระบบตามสั่ง`,
+  },
 };
 
 const skills = [

@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   title: "ผลงาน",
   description: `ผลงานตัวอย่างของ ${siteConfig.name} — เว็บแอพ เว็บธุรกิจ แอพมือถือ ระบบ POS และระบบตามสั่ง`,
   alternates: { canonical: "/portfolio" },
+  openGraph: {
+    type: "website",
+    title: `ผลงาน | ${siteConfig.name}`,
+    description: `ผลงานตัวอย่างของ ${siteConfig.name} — เว็บแอพ เว็บธุรกิจ แอพมือถือ ระบบ POS และระบบตามสั่ง`,
+    url: `${siteConfig.url}/portfolio`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `ผลงาน | ${siteConfig.name}`,
+    description: `ผลงานตัวอย่างของ ${siteConfig.name} — เว็บแอพ เว็บธุรกิจ แอพมือถือ ระบบ POS และระบบตามสั่ง`,
+  },
 };
 
 export default function PortfolioPage() {
