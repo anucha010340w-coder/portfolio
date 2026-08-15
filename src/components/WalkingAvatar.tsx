@@ -310,6 +310,7 @@ export default function WalkingAvatar() {
         onClick={() => setOpen(true)}
         className="fixed left-0 top-0 z-[60] cursor-pointer"
         style={{ willChange: "transform", pointerEvents: "auto" }}
+        role="button"
         aria-label="เปิดแชต"
       >
         {/* Speech bubble — outside scaleX so text never mirrors */}
