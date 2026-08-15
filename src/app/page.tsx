@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { services } from "@/lib/services";
@@ -11,6 +12,33 @@ import Reveal from "@/components/Reveal";
 import TypeReveal from "@/components/TypeReveal";
 import Terminal from "@/components/Terminal";
 import Gallery from "@/components/Gallery";
+
+export const metadata: Metadata = {
+  title: `AW Dev | ${siteConfig.role}`,
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    title: `AW Dev | ${siteConfig.role}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: "AW Dev",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `AW Dev | ${siteConfig.role}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `AW Dev | ${siteConfig.role}`,
+    description: siteConfig.description,
+    images: ["/opengraph-image"],
+  },
+};
 
 export default function Home() {
   const featuredPosts = getAllPosts().slice(0, 3);

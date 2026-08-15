@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
 import { Utensils, ShoppingBag, CalendarCheck, ArrowRight, Building2, Boxes, Truck } from "lucide-react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
@@ -9,6 +10,17 @@ export const metadata: Metadata = {
   title: "ทดลองใช้งาน",
   description: "ทดลองใช้งานระบบตัวอย่าง — POS ร้านอาหาร, ร้านค้าออนไลน์, ระบบจองคิว, เว็บบริษัท, ระบบคลังสินค้า, แอพจัดส่ง แบบ interactive เต็มรูปแบบ",
   alternates: { canonical: "/demo" },
+  openGraph: {
+    type: "website",
+    title: "ทดลองใช้งานระบบตัวอย่าง | AW Dev",
+    description: "ทดลองใช้งานระบบตัวอย่าง — POS ร้านอาหาร, ร้านค้าออนไลน์, ระบบจองคิว, เว็บบริษัท, ระบบคลังสินค้า, แอพจัดส่ง แบบ interactive เต็มรูปแบบ",
+    url: `${siteConfig.url}/demo`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ทดลองใช้งานระบบตัวอย่าง | AW Dev",
+    description: "ทดลองใช้งานระบบตัวอย่าง — POS ร้านอาหาร, ร้านค้าออนไลน์, ระบบจองคิว, เว็บบริษัท, ระบบคลังสินค้า, แอพจัดส่ง แบบ interactive เต็มรูปแบบ",
+  },
 };
 
 const demos = [
