@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MousePointerClick } from "lucide-react";
 import { projects } from "@/lib/projects";
 import { siteConfig } from "@/lib/site";
 import ContactCTA from "@/components/ContactCTA";
+import Reveal from "@/components/Reveal";
+import TypeReveal from "@/components/TypeReveal";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "ผลงาน",
@@ -14,20 +18,22 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="bg-grid relative">
-        <div className="bg-glow absolute inset-0" />
-        <div className="relative mx-auto max-w-4xl px-4 py-20">
-          <h1 className="text-4xl font-bold md:text-5xl">ผลงาน</h1>
-          <p className="mt-4 text-lg text-muted">
-            ตัวอย่างโปรเจกต์ที่ผมทำจริง ครอบคลุมหลายประเภทงาน
+      <BreadcrumbSchema items={[{ name: "หน้าแรก", path: "/" }, { name: "ผลงาน", path: "/portfolio" }]} />
+      <section className="relative overflow-hidden">
+        <div className="bg-hologram absolute inset-0" />
+        <div className="relative mx-auto max-w-4xl px-4 py-28">
+          <h1 className="text-5xl font-bold tracking-tight md:text-6xl"><TypeReveal text="ผลงาน" /></h1>
+          <p className="mt-4 text-xl text-muted">
+            <TypeReveal text="ตัวอย่างโปรเจกต์ที่ผมทำจริง ครอบคลุมหลายประเภทงาน" speed={30} />
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((p) => (
-            <article key={p.slug} id={p.slug} className="card card-hover overflow-hidden p-0">
+          {projects.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 100}>
+            <article id={p.slug} className="card card-hover overflow-hidden p-0">
               <div className="relative h-48">
                 <Image
                   src={p.image}
@@ -65,8 +71,31 @@ export default function PortfolioPage() {
               </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-8">
+        <Reveal>
+        <Link
+          href="/demo"
+          className="card card-hover flex flex-col items-center justify-between gap-4 p-6 md:flex-row"
+        >
+          <div className="flex items-center gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
+              <MousePointerClick className="h-6 w-6 text-accent" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold">ทดลองใช้งานระบบตัวอย่าง</h2>
+              <p className="mt-0.5 text-sm text-muted">
+                ลองกดเล่น POS, ร้านค้าออนไลน์, ระบบจองคิว — เห็นภาพจริงก่อนจ้างทำ
+              </p>
+            </div>
+          </div>
+          <span className="btn-primary text-sm">ไปทดลองใช้งาน</span>
+        </Link>
+        </Reveal>
       </section>
 
       <ContactCTA />

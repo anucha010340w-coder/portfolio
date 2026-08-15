@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
 import ContactCTA from "@/components/ContactCTA";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 type Props = PageProps<"/blog/[slug]">;
 
@@ -70,6 +71,7 @@ export default async function BlogPostPage(props: Props) {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "หน้าแรก", path: "/" }, { name: "บทความ", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }]} />
       <article className="mx-auto max-w-3xl px-4 py-16">
         <Link href="/blog" className="text-sm text-muted hover:text-foreground">
           ← กลับไปยังบทความทั้งหมด

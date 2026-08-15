@@ -4,17 +4,13 @@ import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { getAllPosts } from "@/lib/posts";
 import { serviceIconMap } from "@/lib/serviceIcons";
+import AntigravityParticles from "@/components/AntigravityParticles";
 import ContactCTA from "@/components/ContactCTA";
 import ProjectSlideshow from "@/components/ProjectSlideshow";
 import Reveal from "@/components/Reveal";
+import TypeReveal from "@/components/TypeReveal";
 import Terminal from "@/components/Terminal";
 import Gallery from "@/components/Gallery";
-
-const techMarquee = [
-  "Next.js", "React", "TypeScript", "Node.js", "Tailwind CSS",
-  "PostgreSQL", "React Native", "Flutter", "Docker", "Prisma",
-  "NestJS", "Express", "MongoDB", "Redis", "Linux", "Nginx",
-];
 
 export default function Home() {
   const featuredPosts = getAllPosts().slice(0, 3);
@@ -24,31 +20,28 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-grid">
-        <div className="bg-glow absolute inset-0" />
-        <div className="relative mx-auto max-w-6xl px-4 py-24 md:py-32">
-          <div className="grid items-center gap-12 md:grid-cols-2">
-            <div>
-              <div className="inline-flex animate-fade-up items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-                เปิดรับงานใหม่
-              </div>
-              <h1 className="animate-fade-up delay-100 mt-6 max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
-                สวัสดีครับ ผม
+      <section className="relative overflow-hidden">
+        {/* Cyber/hologram background — full width */}
+        <div className="absolute inset-0 z-0 bg-black">
+          <AntigravityParticles />
+        </div>
+        <div className="pointer-events-none relative z-10 mx-auto max-w-6xl px-4 py-20 md:py-40">
+          <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+            <div className="md:text-white">
+              <h1 className="animate-fade-up mt-6 max-w-3xl text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl md:text-7xl md:leading-[1.1] md:text-white">
+                แปลไอเดีย
                 <br />
-                <span className="text-gradient-animated">AW Dev</span>
-                <br />
-                <span className="text-xl md:text-3xl text-muted">{siteConfig.role}</span>
+                ให้เป็น<span className="text-gradient-animated">ผลิตภัณฑ์</span>
               </h1>
-              <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-lg text-muted">
-                {siteConfig.tagline} ผมช่วยธุรกิจและบุคคลสร้างระบบที่ใช้งานได้จริง
-                ตั้งแต่เว็บนำเสนอจนถึงระบบเต็มรูปแบบ
+              <p className="animate-fade-up delay-200 mt-6 max-w-xl text-lg text-muted sm:text-xl md:text-2xl md:text-gray-300">
+                {siteConfig.role} ที่ออกแบบและสร้างระบบตั้งแต่เว็บไซต์
+                แอพมือถือ จนถึงระบบธุรกิจเต็มรูปแบบ — ใช้งานได้จริง ส่งมอบตรงเวลา
               </p>
               <div className="animate-fade-up delay-300 mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-primary animate-glow-pulse">
-                  ปรึกษาฟรี
+                <Link href="/contact" className="btn-primary pointer-events-auto md:bg-cyan-500 md:text-white md:hover:bg-cyan-400 md:shadow-lg md:shadow-cyan-500/30">
+                  เริ่มโปรเจกต์
                 </Link>
-                <Link href="/portfolio" className="btn-ghost">
+                <Link href="/portfolio" className="btn-ghost btn-ghost-hero pointer-events-auto">
                   ดูผลงาน
                 </Link>
               </div>
@@ -61,48 +54,91 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Quick stats */}
-          <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {[
-              { num: "5+", label: "ปีประสบการณ์" },
-              { num: "30+", label: "โปรเจกต์ส่งมอบ" },
-              { num: "100%", label: "ลูกค้ากลับมาใช้ซ้ำ" },
-              { num: "24/7", label: "คอยตอบและดูแล" },
-            ].map((s, i) => (
-              <div
-                key={s.label}
-                className={`card card-hover animate-fade-up p-4 text-center delay-${(i + 1) * 100}`}
-              >
-                <p className="text-2xl font-bold text-gradient">{s.num}</p>
-                <p className="mt-1 text-xs text-muted">{s.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Tech marquee */}
-      <div className="overflow-hidden border-y border-border bg-card/30 py-4">
-        <div className="marquee-track gap-6">
-          {[...techMarquee, ...techMarquee].map((tech, i) => (
-            <span
-              key={i}
-              className="flex items-center gap-2 whitespace-nowrap text-sm font-mono text-muted"
-            >
-              <span className="text-accent">{"</>"}</span>
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
+      {/* Stats + Tech */}
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <Reveal>
+        <div className="rounded-xl border border-border bg-card/40 font-mono text-sm">
+            <div className="flex items-center gap-2 border-b border-border bg-card/60 px-4 py-2.5">
+              <span className="h-3 w-3 rounded-full bg-red-400/70" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400/70" />
+              <span className="h-3 w-3 rounded-full bg-green-400/70" />
+              <span className="ml-2 text-xs text-muted">developer-profile.ts</span>
+            </div>
+
+            {/* Stats as code comments */}
+            <div className="grid gap-0 border-b border-border md:grid-cols-2">
+              <div className="border-b border-border p-5 md:border-r md:border-b-0">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-muted">{"// "}ปีประสบการณ์</span>
+                  <span className="text-lg font-bold text-accent">5+</span>
+                </div>
+                <div className="mt-3 flex items-baseline justify-between gap-4">
+                  <span className="text-muted">{"// "}โปรเจกต์ส่งมอบ</span>
+                  <span className="text-lg font-bold text-accent">30+</span>
+                </div>
+              </div>
+              <div className="p-5">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-muted">{"// "}ลูกค้ากลับมาจ้างซ้ำ</span>
+                  <span className="text-lg font-bold text-accent">100%</span>
+                </div>
+                <div className="mt-3 flex items-baseline justify-between gap-4">
+                  <span className="text-muted">{"// "}เวลาตอบกลับเฉลี่ย</span>
+                  <span className="text-lg font-bold text-accent">{"< 2 ชม."}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Tech stack as dependencies */}
+            <div className="p-5">
+              <div className="mb-3 text-muted">
+                <span className="text-green-400">const</span>{" "}
+                <span className="text-blue-400">stack</span>{" "}
+                <span className="text-muted">= {"{"}</span>
+              </div>
+              <div className="grid gap-4 pl-6 md:grid-cols-3">
+                {[
+                  { cat: "frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Flutter"] },
+                  { cat: "backend", items: ["Node.js", "NestJS", "Express", "Prisma", "PostgreSQL", "MongoDB", "Redis"] },
+                  { cat: "devops", items: ["Docker", "Linux", "Nginx"] },
+                ].map((group) => (
+                  <div key={group.cat}>
+                    <div className="mb-2 text-xs text-muted">
+                      <span className="text-blue-400">{group.cat}</span>
+                      <span className="text-muted">: [</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 pl-3">
+                      {group.items.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded border border-border bg-background/40 px-2 py-1 text-xs text-foreground transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-1 text-xs text-muted">]</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 text-muted">
+                <span className="text-muted">{"}"}</span>
+                <span className="animate-pulse text-accent">_</span>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
 
       {/* Services */}
-      <section className="mx-auto max-w-6xl px-4 py-20">
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <Reveal>
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold">บริการของผม</h2>
-            <p className="mt-2 text-muted">ครอบคลุมงานพัฒนาซอฟต์แวร์ทุกประเภท</p>
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"><TypeReveal text="บริการของผม" /></h2>
+            <p className="mt-3 text-base text-muted sm:text-lg"><TypeReveal text="ครอบคลุมงานพัฒนาซอฟต์แวร์ทุกประเภท" speed={30} /></p>
           </div>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -135,20 +171,23 @@ export default function Home() {
 
       {/* Project Slideshow */}
       <section className="border-y border-border bg-card/30">
-        <div className="mx-auto max-w-6xl px-4 py-20">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <Reveal>
-            <div className="mb-10 text-center">
-              <h2 className="text-3xl font-bold">ผลงานตัวอย่าง</h2>
-              <p className="mt-2 text-muted">ตัวอย่างโปรเจกต์ที่ผมทำจริง</p>
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"><TypeReveal text="ผลงานตัวอย่าง" /></h2>
+              <p className="mt-3 text-base text-muted sm:text-lg"><TypeReveal text="ตัวอย่างโปรเจกต์ที่ผมทำจริง" speed={30} /></p>
             </div>
           </Reveal>
           <Reveal delay={200}>
             <ProjectSlideshow projects={slideshowProjects} />
           </Reveal>
           <Reveal>
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/portfolio" className="btn-ghost">
                 ดูผลงานทั้งหมด
+              </Link>
+              <Link href="/demo" className="btn-primary">
+                ทดลองใช้งานระบบ
               </Link>
             </div>
           </Reveal>
@@ -156,11 +195,11 @@ export default function Home() {
       </section>
 
       {/* Gallery */}
-      <section className="mx-auto max-w-6xl px-4 py-20">
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <Reveal>
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold">ตัวอย่างงานออกแบบ</h2>
-            <p className="mt-2 text-muted">แบนเนอร์ สื่อโฆษณา และงานออกแบบต่างๆ</p>
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"><TypeReveal text="ตัวอย่างงานออกแบบ" /></h2>
+            <p className="mt-3 text-base text-muted sm:text-lg"><TypeReveal text="แบนเนอร์ สื่อโฆษณา และงานออกแบบต่างๆ" speed={30} /></p>
           </div>
         </Reveal>
         <Reveal delay={200}>
@@ -169,11 +208,11 @@ export default function Home() {
       </section>
 
       {/* Blog preview */}
-      <section className="mx-auto max-w-6xl px-4 py-20">
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <Reveal>
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold">บทความล่าสุด</h2>
-            <p className="mt-2 text-muted">ความรู้และคำแนะนำจากประสบการณ์จริง</p>
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"><TypeReveal text="บทความล่าสุด" /></h2>
+            <p className="mt-3 text-base text-muted sm:text-lg"><TypeReveal text="ความรู้และคำแนะนำจากประสบการณ์จริง" speed={30} /></p>
           </div>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-3">

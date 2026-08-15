@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "พิมพ์ใบเสร็จและใบสั่งอัตโนมัติ",
       "รายงานยอดขาย กำไร สต็อกวัตถุดิบ",
     ],
-    image: "/projects/pos-restaurant.svg",
+    image: "/projects/pos-restaurant.png?v=3",
   },
   {
     slug: "ecommerce-website",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       "จัดการสินค้า หมวดหมู่ สต็อก",
       "ติดตามคำสั่งซื้อและสถานะการจัดส่ง",
     ],
-    image: "/projects/ecommerce-website.svg",
+    image: "/projects/ecommerce-website.png?v=3",
   },
   {
     slug: "booking-system",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
       "แจ้งเตือนผ่าน LINE Notify",
       "จัดการคิวและเลื่อนนัดได้",
     ],
-    image: "/projects/booking-system.svg",
+    image: "/projects/booking-system.png?v=3",
   },
   {
     slug: "company-website",
@@ -63,7 +63,7 @@ export const projects: Project[] = [
       "แก้ไขเนื้อหาเองผ่าน CMS",
       "โหลดเร็ว ได้คะแนน Lighthouse สูง",
     ],
-    image: "/projects/company-website.svg",
+    image: "/projects/company-website.png?v=3",
   },
   {
     slug: "mobile-delivery",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
       "อัปเดตสถานะและเก็บรูปหลักฐาน",
       "แจ้งเตือนเมื่อมีงานใหม่",
     ],
-    image: "/projects/mobile-delivery.svg",
+    image: "/projects/mobile-delivery.png?v=3",
   },
   {
     slug: "inventory-system",
@@ -91,6 +91,6 @@ export const projects: Project[] = [
       "รับเข้า-ส่งออกพร้อมใบเสร็จ",
       "รายงานสต็อกและสินค้าใกล้หมด",
     ],
-    image: "/projects/inventory-system.svg",
+    image: "/projects/inventory-system.png?v=3",
   },
 ];

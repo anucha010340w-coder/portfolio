@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { siteConfig } from "@/lib/site";
+import PixelLogo from "@/components/PixelLogo";
 
 const navItems = [
   { href: "/", label: "หน้าแรก" },
   { href: "/about", label: "เกี่ยวกับ" },
   { href: "/services", label: "บริการ" },
   { href: "/portfolio", label: "ผลงาน" },
+  { href: "/demo", label: "ทดลองใช้งาน" },
   { href: "/blog", label: "บทความ" },
   { href: "/contact", label: "ติดต่อ" },
 ];
@@ -17,19 +18,19 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="logo-typing text-gradient">AW Dev</span>
+    <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5">
+        <Link href="/" className="flex shrink-0 items-center">
+          <PixelLogo />
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden flex-nowrap items-center gap-0.5 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="rounded-full px-3 py-2 text-sm text-muted transition-colors hover:text-foreground"
+                className="rounded-full px-2.5 py-2 text-sm text-muted transition-colors hover:text-foreground"
               >
                 {item.label}
               </Link>

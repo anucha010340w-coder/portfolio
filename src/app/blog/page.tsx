@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
+import Reveal from "@/components/Reveal";
+import TypeReveal from "@/components/TypeReveal";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "บทความ",
@@ -14,21 +17,22 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="bg-grid relative">
-        <div className="bg-glow absolute inset-0" />
-        <div className="relative mx-auto max-w-4xl px-4 py-20">
-          <h1 className="text-4xl font-bold md:text-5xl">บทความ</h1>
-          <p className="mt-4 text-lg text-muted">
-            ความรู้และคำแนะนำจากประสบการณ์จริง เกี่ยวกับเว็บ ซอฟต์แวร์ SEO และธุรกิจดิจิทัล
+      <BreadcrumbSchema items={[{ name: "หน้าแรก", path: "/" }, { name: "บทความ", path: "/blog" }]} />
+      <section className="relative overflow-hidden">
+        <div className="bg-hologram absolute inset-0" />
+        <div className="relative mx-auto max-w-4xl px-4 py-28">
+          <h1 className="text-5xl font-bold tracking-tight md:text-6xl"><TypeReveal text="บทความ" /></h1>
+          <p className="mt-4 text-xl text-muted">
+            <TypeReveal text="ความรู้และคำแนะนำจากประสบการณ์จริง เกี่ยวกับเว็บ ซอฟต์แวร์ SEO และธุรกิจดิจิทัล" speed={30} />
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+          {posts.map((post, i) => (
+            <Reveal key={post.slug} delay={i * 100}>
             <Link
-              key={post.slug}
               href={`/blog/${post.slug}`}
               className="card card-hover flex flex-col p-6"
             >
@@ -54,6 +58,7 @@ export default function BlogPage() {
                 <span>{post.readingTime}</span>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
       </section>

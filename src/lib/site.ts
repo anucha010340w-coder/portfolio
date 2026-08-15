@@ -15,7 +15,6 @@ export const siteConfig = {
   lineId: "anucha1997w",
   facebook: "https://web.facebook.com/profile.php?id=61592582261777",
   github: "https://github.com/anucha212224w-coder",
-  ogImage: "/og.png",
   keywords: [
     "รับทำเว็บไซต์",
     "รับเขียนโปรแกรม",

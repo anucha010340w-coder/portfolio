@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Phone, Mail, MessageCircle, Share2, Code, ArrowRight } from "lucide-react";
+import { Phone, Mail, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { FacebookIcon, LineIcon, GitHubIcon } from "@/components/BrandIcons";
+import Reveal from "@/components/Reveal";
+import TypeReveal from "@/components/TypeReveal";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "ติดต่อ",
@@ -26,21 +30,21 @@ export default function ContactPage() {
       note: "ตอบกลับภายใน 24 ชม.",
     },
     {
-      icon: "MessageCircle",
+      icon: "LineIcon",
       label: "LINE",
       value: siteConfig.lineId,
       href: `https://line.me/ti/p/~${siteConfig.lineId}`,
       note: "แสกน QR หรือเพิ่มเพื่อนด้วย ID",
     },
     {
-      icon: "Share2",
+      icon: "FacebookIcon",
       label: "Facebook",
       value: "Facebook Profile",
       href: siteConfig.facebook,
       note: "ทัก inbox ได้ตลอด",
     },
     {
-      icon: "Code",
+      icon: "GitHubIcon",
       label: "GitHub",
       value: "anucha212224w-coder",
       href: siteConfig.github,
@@ -50,12 +54,13 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-grid relative">
-        <div className="bg-glow absolute inset-0" />
-        <div className="relative mx-auto max-w-4xl px-4 py-20">
-          <h1 className="text-4xl font-bold md:text-5xl">ติดต่อผม</h1>
-          <p className="mt-4 text-lg text-muted">
-            มีไอเดียหรือโปรเจกต์ในใจ? ทักมาคุยก่อนเลย ปรึกษาฟรี ไม่มีค่าใช้จ่าย
+      <BreadcrumbSchema items={[{ name: "หน้าแรก", path: "/" }, { name: "ติดต่อ", path: "/contact" }]} />
+      <section className="relative overflow-hidden">
+        <div className="bg-hologram absolute inset-0" />
+        <div className="relative mx-auto max-w-4xl px-4 py-28">
+          <h1 className="text-5xl font-bold tracking-tight md:text-6xl"><TypeReveal text="ติดต่อผม" /></h1>
+          <p className="mt-4 text-xl text-muted">
+            <TypeReveal text="มีไอเดียหรือโปรเจกต์ในใจ? ทักมาคุยก่อนเลย ปรึกษาฟรี ไม่มีค่าใช้จ่าย" speed={30} />
           </p>
         </div>
       </section>
@@ -64,19 +69,21 @@ export default function ContactPage() {
         <div className="grid gap-8 md:grid-cols-2">
           {/* Channels */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold">ช่องทางติดต่อ</h2>
-            {channels.map((c) => (
-              <a
-                key={c.label}
-                href={c.href}
-                target={c.href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                className="card card-hover flex items-center gap-4 p-5"
-              >
+            <Reveal>
+              <h2 className="text-2xl font-bold"><TypeReveal text="ช่องทางติดต่อ" /></h2>
+            </Reveal>
+            {channels.map((c, i) => (
+              <Reveal key={c.label} delay={i * 100}>
+                <a
+                  href={c.href}
+                  target={c.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="card card-hover flex items-center gap-4 p-5"
+                >
                 <span className="text-accent">
                   {(() => {
                     const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-                      Phone, Mail, MessageCircle, Share2, Code,
+                      Phone, Mail, LineIcon, FacebookIcon, GitHubIcon,
                     };
                     const Icon = iconMap[c.icon] ?? Mail;
                     return <Icon className="h-7 w-7" />;
@@ -89,12 +96,16 @@ export default function ContactPage() {
                 </div>
                 <ArrowRight className="h-5 w-5 text-accent" />
               </a>
+              </Reveal>
             ))}
           </div>
 
           {/* LINE QR placeholder */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold">แสกน LINE QR</h2>
+            <Reveal>
+              <h2 className="text-2xl font-bold"><TypeReveal text="แสกน LINE QR" /></h2>
+            </Reveal>
+            <Reveal delay={200}>
             <div className="card flex flex-col items-center justify-center p-8">
               <Image
                 src="/line-qr.jpg"
@@ -116,12 +127,16 @@ export default function ContactPage() {
                 เพิ่มเพื่อน LINE
               </a>
             </div>
+            </Reveal>
           </div>
         </div>
 
         {/* Quick form (mailto) */}
         <div className="mt-12">
-          <h2 className="text-2xl font-bold">ส่งคำถามด่วน</h2>
+          <Reveal>
+            <h2 className="text-2xl font-bold"><TypeReveal text="ส่งคำถามด่วน" /></h2>
+          </Reveal>
+          <Reveal delay={200}>
           <form
             className="card mt-6 grid gap-4 p-6 md:grid-cols-2"
             action={`mailto:${siteConfig.email}`}
@@ -160,6 +175,7 @@ export default function ContactPage() {
               ส่งคำถาม
             </button>
           </form>
+          </Reveal>
         </div>
       </section>
     </>

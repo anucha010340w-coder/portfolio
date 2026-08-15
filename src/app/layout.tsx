@@ -1,25 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingContacts from "@/components/FloatingContacts";
+import WalkingAvatar from "@/components/WalkingAvatar";
+import { ProfessionalServiceSchema } from "@/components/Schema";
 
-const geistSans = Geist({
+const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const notoSansThai = Noto_Sans_Thai({
+  variable: "--font-thai",
+  subsets: ["thai"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | ${siteConfig.role}`,
-    template: `%s | ${siteConfig.name}`,
+    default: `AW Dev | ${siteConfig.role}`,
+    template: `%s | AW Dev`,
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
@@ -33,23 +45,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "th_TH",
     url: siteConfig.url,
-    title: `${siteConfig.name} | ${siteConfig.role}`,
+    title: `AW Dev | ${siteConfig.role}`,
     description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
+    siteName: "AW Dev",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ${siteConfig.role}`,
+    title: `AW Dev | ${siteConfig.role}`,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,
@@ -62,18 +65,23 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    google: "GOOGLE_SITE_VERIFICATION_CODE",
+  },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/icon-192.png", sizes: "192x192" },
-      { url: "/icon-512.png", sizes: "512x512" },
+      { url: "/favicon_io/favicon.ico", sizes: "32x32" },
+      { url: "/favicon_io/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon_io/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon_io/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon_io/apple-touch-icon.png",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1a1d2b",
+  themeColor: "#06070a",
   width: "device-width",
   initialScale: 1,
 };
@@ -83,7 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: siteConfig.name,
-    alternateName: siteConfig.nameEn,
+    alternateName: "AW Dev",
     jobTitle: siteConfig.role,
     description: siteConfig.description,
     url: siteConfig.url,
@@ -102,16 +110,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="th"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${notoSansThai.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingContacts />
+        <WalkingAvatar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ProfessionalServiceSchema />
       </body>
     </html>
   );

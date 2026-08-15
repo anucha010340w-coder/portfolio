@@ -16,8 +16,8 @@ export default function OpengraphImage() {
           justifyContent: "center",
           padding: "80px",
           background:
-            "linear-gradient(135deg, #1a1d2b 0%, #20243a 50%, #241438 100%)",
-          color: "#e7e9ee",
+            "linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #f5f3ff 100%)",
+          color: "#1e293b",
           fontFamily: "sans-serif",
         }}
       >
@@ -27,7 +27,7 @@ export default function OpengraphImage() {
             alignItems: "center",
             gap: 16,
             fontSize: 28,
-            color: "#00e5ff",
+            color: "#2563eb",
           }}
         >
           <span style={{ fontSize: 40 }}>{"</>"}</span>
@@ -44,7 +44,7 @@ export default function OpengraphImage() {
         >
           <span
             style={{
-              background: "linear-gradient(120deg, #00e5ff 0%, #b14bff 100%)",
+              background: "linear-gradient(120deg, #2563eb 0%, #7c3aed 100%)",
               backgroundClip: "text",
               color: "transparent",
             }}
@@ -53,9 +53,9 @@ export default function OpengraphImage() {
           </span>
         </div>
         <div style={{ marginTop: 12, fontSize: 40, fontWeight: 700 }}>
-          {siteConfig.nameEn}
+          AW Dev
         </div>
-        <div style={{ marginTop: 32, fontSize: 28, color: "#8b90a0", maxWidth: 900 }}>
+        <div style={{ marginTop: 32, fontSize: 28, color: "#64748b", maxWidth: 900 }}>
           {siteConfig.tagline}
         </div>
         <div
@@ -64,7 +64,7 @@ export default function OpengraphImage() {
             display: "flex",
             gap: 24,
             fontSize: 22,
-            color: "#8b90a0",
+            color: "#64748b",
           }}
         >
           <span>เว็บแอพ</span>

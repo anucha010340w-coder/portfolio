@@ -2,20 +2,36 @@
 
 import { useEffect, useState } from "react";
 
-const codeLines = [
-  { text: "const dev = {", color: "text-muted" },
-  { text: "  name: 'AW Dev',", color: "text-accent" },
-  { text: "  role: 'Full-Stack Developer',", color: "text-accent" },
-  { text: "  stack: ['Next.js', 'React',", color: "text-accent-2" },
-  { text: "    'TypeScript', 'Node'],", color: "text-accent-2" },
-  { text: "  available: true,", color: "text-green-400" },
-  { text: "};", color: "text-muted" },
-  { text: "", color: "" },
-  { text: "dev.build('your-project');", color: "text-foreground" },
-  { text: "// ✓ Deploy successful", color: "text-green-400" },
+const codeSets = [
+  [
+    { text: "const dev = {", color: "text-slate-400" },
+    { text: "  name: 'AW Dev',", color: "text-cyan-400" },
+    { text: "  role: 'Full-Stack Developer',", color: "text-cyan-400" },
+    { text: "  stack: ['Next.js', 'React',", color: "text-purple-400" },
+    { text: "    'TypeScript', 'Node'],", color: "text-purple-400" },
+    { text: "  available: true,", color: "text-green-400" },
+    { text: "};", color: "text-slate-400" },
+    { text: "", color: "" },
+    { text: "dev.build('your-project');", color: "text-slate-200" },
+    { text: "// ✓ Deploy successful", color: "text-green-400" },
+  ],
+  [
+    { text: "async function deploy() {", color: "text-slate-400" },
+    { text: "  const app = await build({", color: "text-cyan-400" },
+    { text: "    framework: 'Next.js',", color: "text-cyan-400" },
+    { text: "    db: 'PostgreSQL',", color: "text-purple-400" },
+    { text: "    cache: 'Redis',", color: "text-purple-400" },
+    { text: "  });", color: "text-slate-400" },
+    { text: "  await app.deploy('vercel');", color: "text-slate-200" },
+    { text: "  return app.url;", color: "text-green-400" },
+    { text: "}", color: "text-slate-400" },
+    { text: "", color: "" },
+    { text: "// ✓ Live in 2.3s", color: "text-green-400" },
+    { text: "// → anucha-dev.vercel.app", color: "text-slate-200" },
+  ],
 ];
 
-const TICK_MS = 50;
+const TICK_MS = 80;
 const LINE_PAUSE_TICKS = 5;
 const RESTART_PAUSE_TICKS = 80;
 
@@ -27,11 +43,27 @@ export default function Terminal() {
     return () => clearInterval(id);
   }, []);
 
-  const totalChars = codeLines.reduce((sum, l) => sum + l.text.length, 0);
-  const totalTicks = totalChars + (codeLines.length - 1) * LINE_PAUSE_TICKS + RESTART_PAUSE_TICKS;
-  const cycleTick = tick % totalTicks;
+  // Calculate total ticks per set
+  const setTicks = codeSets.map((lines) => {
+    const chars = lines.reduce((sum, l) => sum + l.text.length, 0);
+    return chars + (lines.length - 1) * LINE_PAUSE_TICKS + RESTART_PAUSE_TICKS;
+  });
+  const grandTotal = setTicks.reduce((a, b) => a + b, 0);
+  const cycleTick = tick % grandTotal;
 
+  // Find which set we're in
+  let setIdx = 0;
   let remaining = cycleTick;
+  for (let s = 0; s < codeSets.length; s++) {
+    if (remaining < setTicks[s]) {
+      setIdx = s;
+      break;
+    }
+    remaining -= setTicks[s];
+  }
+
+  const codeLines = codeSets[setIdx];
+
   let lineIdx = 0;
   let charIdx = 0;
 
@@ -56,12 +88,12 @@ export default function Terminal() {
   }
 
   return (
-    <div className="terminal animate-glow-pulse">
+    <div className="terminal">
       <div className="terminal-header">
         <span className="terminal-dot" style={{ background: "#ff5f56" }} />
         <span className="terminal-dot" style={{ background: "#ffbd2e" }} />
         <span className="terminal-dot" style={{ background: "#27c93f" }} />
-        <span className="ml-2 text-xs text-muted">~/aw-dev — zsh</span>
+        <span className="ml-2 text-xs text-slate-400">~/aw-dev — zsh</span>
       </div>
       <div className="terminal-body" style={{ minHeight: `${codeLines.length * 1.7 + 1}rem` }}>
         {codeLines.map((line, i) => {

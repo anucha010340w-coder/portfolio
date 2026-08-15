@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Phone, Mail, MessageCircle, Share2, Code } from "lucide-react";
+import { Phone, Mail, Code } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { FacebookIcon, LineIcon, GitHubIcon } from "@/components/BrandIcons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -22,6 +23,7 @@ export default function Footer() {
             <li><Link href="/about" className="hover:text-foreground">เกี่ยวกับ</Link></li>
             <li><Link href="/services" className="hover:text-foreground">บริการ</Link></li>
             <li><Link href="/portfolio" className="hover:text-foreground">ผลงาน</Link></li>
+            <li><Link href="/demo" className="hover:text-foreground">ทดลองใช้งาน</Link></li>
             <li><Link href="/blog" className="hover:text-foreground">บทความ</Link></li>
             <li><Link href="/contact" className="hover:text-foreground">ติดต่อ</Link></li>
           </ul>
@@ -42,17 +44,17 @@ export default function Footer() {
             </li>
             <li>
               <a href={`https://line.me/ti/p/~${siteConfig.lineId}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground">
-                <MessageCircle className="h-4 w-4 text-accent" /> LINE: {siteConfig.lineId}
+                <LineIcon className="h-4 w-4 text-accent" /> LINE: {siteConfig.lineId}
               </a>
             </li>
             <li>
               <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground">
-                <Share2 className="h-4 w-4 text-accent" /> Facebook
+                <FacebookIcon className="h-4 w-4 text-accent" /> Facebook
               </a>
             </li>
             <li>
               <a href={siteConfig.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground">
-                <Code className="h-4 w-4 text-accent" /> GitHub
+                <GitHubIcon className="h-4 w-4 text-accent" /> GitHub
               </a>
             </li>
           </ul>
@@ -60,7 +62,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-border px-4 py-6 text-center text-xs text-muted">
-        © {year} {siteConfig.name} ({siteConfig.nameEn}). สงวนลิขสิทธิ์.
+        © {year} AW Dev. สงวนลิขสิทธิ์.
       </div>
     </footer>
   );
