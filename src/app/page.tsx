@@ -5,7 +5,7 @@ import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { getAllPosts } from "@/lib/posts";
 import { serviceIconMap } from "@/lib/serviceIcons";
-import AntigravityParticles from "@/components/AntigravityParticles";
+import LazyParticles from "@/components/LazyParticles";
 import ContactCTA from "@/components/ContactCTA";
 import ProjectSlideshow from "@/components/ProjectSlideshow";
 import Reveal from "@/components/Reveal";
@@ -51,7 +51,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         {/* Cyber/hologram background — full width */}
         <div className="absolute inset-0 z-0 bg-black">
-          <AntigravityParticles />
+          <LazyParticles />
         </div>
         <div className="pointer-events-none relative z-10 mx-auto max-w-6xl px-4 py-20 md:py-40">
           <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
