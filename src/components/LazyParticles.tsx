@@ -8,16 +8,25 @@ const AntigravityParticles = dynamic(() => import("@/components/AntigravityParti
   loading: () => <div className="h-full w-full bg-black" />,
 });
 
+const EVENTS = ["pointerdown", "touchstart", "scroll", "mousemove", "keydown"] as const;
+
 export default function LazyParticles() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const start = () => setShow(true);
-    if ("requestIdleCallback" in window) {
-      (window as Window).requestIdleCallback(start, { timeout: 3000 });
-    } else {
-      setTimeout(start, 1500);
-    }
+    let done = false;
+    const start = () => {
+      if (done) return;
+      done = true;
+      EVENTS.forEach((e) => window.removeEventListener(e, start));
+      setShow(true);
+    };
+
+    EVENTS.forEach((e) =>
+      window.addEventListener(e, start, { once: true, passive: true })
+    );
+
+    return () => EVENTS.forEach((e) => window.removeEventListener(e, start));
   }, []);
 
   if (!show) return <div className="h-full w-full bg-black" />;
