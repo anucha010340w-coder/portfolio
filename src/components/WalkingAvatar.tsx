@@ -102,11 +102,14 @@ export default function WalkingAvatar() {
     const ufoSize = 80;
     const margin = 20;
 
+    let vw = window.innerWidth;
+    let vh = window.innerHeight;
+
     function getAvoidZones(): Array<{ x: number; y: number; w: number; h: number }> {
       const zones: Array<{ x: number; y: number; w: number; h: number }> = [];
-      zones.push({ x: 0, y: 0, w: window.innerWidth, h: 70 });
-      zones.push({ x: window.innerWidth - 80, y: window.innerHeight - 200, w: 80, h: 200 });
-      zones.push({ x: 0, y: window.innerHeight - 60, w: window.innerWidth, h: 60 });
+      zones.push({ x: 0, y: 0, w: vw, h: 70 });
+      zones.push({ x: vw - 80, y: vh - 200, w: 80, h: 200 });
+      zones.push({ x: 0, y: vh - 60, w: vw, h: 60 });
       return zones;
     }
 
@@ -117,8 +120,8 @@ export default function WalkingAvatar() {
       );
     }
 
-    let x = window.innerWidth * 0.3;
-    let y = window.innerHeight * 0.4;
+    let x = vw * 0.3;
+    let y = vh * 0.4;
     let targetX = x;
     let targetY = y;
     let walking = false;
@@ -138,8 +141,8 @@ export default function WalkingAvatar() {
     const attackDuration = 3.5;
 
     function pickNewTarget() {
-      const maxX = window.innerWidth - ufoSize - margin;
-      const maxY = window.innerHeight - ufoSize - margin;
+      const maxX = vw - ufoSize - margin;
+      const maxY = vh - ufoSize - margin;
       let attempts = 0;
       do {
         targetX = margin + Math.random() * (maxX - margin);
@@ -168,8 +171,8 @@ export default function WalkingAvatar() {
       }
 
       const speed = 50;
-      const maxX = window.innerWidth - ufoSize - margin;
-      const maxY = window.innerHeight - ufoSize - margin;
+      const maxX = vw - ufoSize - margin;
+      const maxY = vh - ufoSize - margin;
 
       // Beam cooldown always counts down
       if (!beamActive) beamCooldown -= dt;
@@ -251,8 +254,10 @@ export default function WalkingAvatar() {
     raf = requestAnimationFrame(update);
 
     function onResize() {
-      const maxX = window.innerWidth - ufoSize - margin;
-      const maxY = window.innerHeight - ufoSize - margin;
+      vw = window.innerWidth;
+      vh = window.innerHeight;
+      const maxX = vw - ufoSize - margin;
+      const maxY = vh - ufoSize - margin;
       if (x > maxX) x = maxX;
       if (y > maxY) y = maxY;
     }
