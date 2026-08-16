@@ -12,7 +12,7 @@ export const siteConfig = {
   phone: "0612373304",
   phoneDisplay: "061-237-3304",
   lineId: "anucha1997w",
-  facebook: "https://web.facebook.com/profile.php?id=61592582261777",
+  facebook: "https://facebook.com/Developer22",
   github: "https://github.com/anucha010340w-coder",
   keywords: [
     "รับทำเว็บไซต์",
