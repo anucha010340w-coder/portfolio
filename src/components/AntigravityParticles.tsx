@@ -15,8 +15,8 @@ export default function AntigravityParticles() {
       "(min-width: 769px) and (max-width: 1200px)"
     ).matches;
 
-    const countX = isMobile ? 50 : isTablet ? 85 : 100;
-    const countY = isMobile ? 35 : isTablet ? 50 : 55;
+    const countX = isMobile ? 70 : isTablet ? 110 : 130;
+    const countY = isMobile ? 45 : isTablet ? 65 : 70;
 
     const DEFAULTS = {
       cursor: {
@@ -201,24 +201,32 @@ export default function AntigravityParticles() {
 
         if (alpha < 0.01) discard;
 
-        // Cyber/hologram color palette
+        // Cyber/hologram color palette — vibrant multi-color
         vec3 baseColor = vec3(0.02, 0.04, 0.08);
         vec3 colorOne = vec3(0.0, 0.8, 1.0);       // cyan #00CCFF
         vec3 colorTwo = vec3(0.0, 1.0, 0.533);     // neon green #00FF88
         vec3 colorThree = vec3(0.533, 0.4, 1.0);   // hologram purple #8866FF
         vec3 colorFour = vec3(0.2, 0.533, 1.0);    // electric blue #3388FF
         vec3 colorFive = vec3(0.0, 1.0, 0.8);      // teal #00FFCC
+        vec3 colorSix = vec3(1.0, 0.2, 0.6);       // hot pink #FF3399
+        vec3 colorSeven = vec3(1.0, 0.6, 0.0);     // orange #FF9900
+        vec3 colorEight = vec3(0.6, 1.0, 0.2);     // lime #99FF33
 
         float t = uTime * 1.2;
         float p1 = sin(vPos.x * 0.8 + t);
         float p2 = sin(vPos.y * 0.8 + t * 0.8 + p1);
         float p3 = sin(vPos.x * 0.5 + vPos.y * 0.5 + t * 0.6);
         float p4 = sin(vPos.y * 0.3 + t * 0.4 + p1 * 0.5);
+        float p5 = sin(vPos.x * 0.3 + vPos.y * 0.7 + t * 0.5);
+        float p6 = sin(vPos.x * 0.6 + t * 0.7 + p2 * 0.5);
 
         vec3 activeColor = mix(colorOne, colorTwo, p1 * 0.5 + 0.5);
         activeColor = mix(activeColor, colorThree, p2 * 0.5 + 0.5);
         activeColor = mix(activeColor, colorFour, p3 * 0.3 + 0.3);
         activeColor = mix(activeColor, colorFive, p4 * 0.25 + 0.25);
+        activeColor = mix(activeColor, colorSix, p5 * 0.2 + 0.2);
+        activeColor = mix(activeColor, colorSeven, p6 * 0.15 + 0.15);
+        activeColor = mix(activeColor, colorEight, (p1 + p3) * 0.1 + 0.1);
 
         vec3 finalColor = mix(baseColor, activeColor, smoothstep(0.1, 0.8, vSize));
         float finalAlpha = alpha * mix(0.4, 0.95, vSize);
