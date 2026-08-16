@@ -63,18 +63,18 @@ export default function Home() {
         </div>
         <div className="pointer-events-none relative z-10 mx-auto max-w-6xl px-4 py-20 md:py-40">
           <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
-            <div className="md:text-white">
-              <h1 className="animate-fade-up mt-6 max-w-3xl text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl md:text-7xl md:leading-[1.1] md:text-white">
+            <div className="text-white">
+              <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.15] tracking-tight text-white sm:text-5xl md:text-7xl md:leading-[1.1]">
                 แปลไอเดีย
                 <br />
                 ให้เป็น<span className="text-gradient-animated">ผลิตภัณฑ์</span>
               </h1>
-              <p className="animate-fade-up delay-200 mt-6 max-w-xl text-lg text-muted sm:text-xl md:text-2xl md:text-gray-300">
+              <p className="animate-fade-up delay-200 mt-6 max-w-xl text-lg text-gray-300 sm:text-xl md:text-2xl">
                 {siteConfig.role} ที่ออกแบบและสร้างระบบตั้งแต่เว็บไซต์
                 แอพมือถือ จนถึงระบบธุรกิจเต็มรูปแบบ — ใช้งานได้จริง ส่งมอบตรงเวลา
               </p>
               <div className="animate-fade-up delay-300 mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-primary pointer-events-auto md:bg-cyan-500 md:text-white md:hover:bg-cyan-400 md:shadow-lg md:shadow-cyan-500/30">
+                <Link href="/contact" className="btn-primary pointer-events-auto bg-cyan-500 text-white shadow-lg shadow-cyan-500/30 hover:bg-cyan-400">
                   เริ่มโปรเจกต์
                 </Link>
                 <Link href="/portfolio" className="btn-ghost btn-ghost-hero pointer-events-auto">
