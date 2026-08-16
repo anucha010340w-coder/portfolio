@@ -436,48 +436,4 @@ body {
   50% { opacity: 1; transform: scale(1.15); }
 }
 
-/* Floating UFO Avatar */
-.ufo-float {
-  animation: ufo-bob 2s ease-in-out infinite;
-}
-@keyframes ufo-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-.ufo-light {
-  animation: ufo-light-blink 1.5s ease-in-out infinite;
-}
-@keyframes ufo-light-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-@keyframes bubble-pop {
-  0% { opacity: 0; transform: translateX(-50%) scale(0.7); }
-  100% { opacity: 1; transform: translateX(-50%) scale(1); }
-}
-@keyframes beam-pulse {
-  0% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-@keyframes beam-particles {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-}
-@keyframes enemy-appear {
-  0% { transform: translateX(80px) translateY(-10px) rotate(-5deg); opacity: 0; }
-  50% { transform: translateX(20px) translateY(0px) rotate(2deg); opacity: 1; }
-  100% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
-}
-@keyframes enemy-destroy {
-  0%, 60% { opacity: 1; }
-  63% { opacity: 1; filter: brightness(3); }
-  68% { opacity: 0; }
-  100% { opacity: 0; }
-}
-@keyframes laser-fire {
-  0%, 100% { opacity: 1; }
-}
-@keyframes explosion-show {
-  0%, 100% { opacity: 1; }
-}
+/* WalkingAvatar styles moved to WalkingAvatar.module.css (lazy loaded) */
