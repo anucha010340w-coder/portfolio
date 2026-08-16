@@ -40,6 +40,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a href={siteConfig.facebookPage} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground">
+                <FacebookIcon className="h-4 w-4 text-accent" /> Facebook Page
+              </a>
+            </li>
+            <li>
               <a href={siteConfig.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground">
                 <GitHubIcon className="h-4 w-4 text-accent" /> GitHub
               </a>

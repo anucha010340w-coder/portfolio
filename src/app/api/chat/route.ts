@@ -14,6 +14,7 @@ const SYSTEM_PROMPT = `คุณคือแชตบอทของ "${siteConf
 - โทร: ${siteConfig.phoneDisplay}
 - LINE ID: ${siteConfig.lineId} (สำคัญ: LINE ID คือ anucha1997w เท่านั้น ห้ามตอบสั้นกว่านี้)
 - Facebook: ${siteConfig.facebook}
+- Facebook Page: ${siteConfig.facebookPage}
 - GitHub: ${siteConfig.github}
 - เว็บไซต์: ${siteConfig.url}
 

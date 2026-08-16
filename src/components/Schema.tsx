@@ -106,7 +106,7 @@ export function ProfessionalServiceSchema() {
     telephone: siteConfig.phone,
     priceRange: "฿฿",
     areaServed: "TH",
-    sameAs: [siteConfig.facebook, siteConfig.github],
+    sameAs: [siteConfig.facebook, siteConfig.facebookPage, siteConfig.github],
     knowsAbout: [
       "Web Development",
       "Mobile App Development",

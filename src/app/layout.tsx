@@ -106,7 +106,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     url: siteConfig.url,
     email: `mailto:${siteConfig.email}`,
     telephone: siteConfig.phone,
-    sameAs: [siteConfig.facebook, siteConfig.github],
+    sameAs: [siteConfig.facebook, siteConfig.facebookPage, siteConfig.github],
     knowsAbout: [
       "Web Development",
       "Mobile App Development",

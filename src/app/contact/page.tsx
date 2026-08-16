@@ -55,6 +55,13 @@ export default function ContactPage() {
       note: "ทัก inbox ได้ตลอด",
     },
     {
+      icon: "FacebookIcon",
+      label: "Facebook Page",
+      value: "AW Dev Page",
+      href: siteConfig.facebookPage,
+      note: "ติดตามอัปเดตผลงาน",
+    },
+    {
       icon: "GitHubIcon",
       label: "GitHub",
       value: "anucha010340w-coder",
