@@ -173,6 +173,15 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Fallback: show content if JS disabled or slow */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 .type-cursor-inline {
   display: inline-block;
   width: 2px;
