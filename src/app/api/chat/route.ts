@@ -95,9 +95,9 @@ export async function POST(req: NextRequest) {
     ];
 
     const MODELS = [
-      "gemini-2.0-flash-lite",
-      "gemini-2.0-flash",
       "gemini-flash-latest",
+      "gemini-flash-lite-latest",
+      "gemini-2.5-flash",
     ];
 
     async function callGemini(modelIdx: number, attempt: number): Promise<Response> {
