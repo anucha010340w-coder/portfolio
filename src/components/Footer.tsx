@@ -7,8 +7,8 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-border bg-card">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-4">
-        <div className="md:col-span-2">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3">
+        <div>
           <p className="text-gradient text-xl font-bold">AW Dev</p>
           <p className="mt-1 text-sm text-muted">{siteConfig.tagline}</p>
           <p className="mt-4 max-w-md text-sm text-muted">
@@ -16,20 +16,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div>
-          <p className="mb-3 font-semibold">เมนู</p>
-          <ul className="space-y-2 text-sm text-muted">
-            <li><Link href="/" className="hover:text-foreground">หน้าแรก</Link></li>
-            <li><Link href="/about" className="hover:text-foreground">เกี่ยวกับ</Link></li>
-            <li><Link href="/services" className="hover:text-foreground">บริการ</Link></li>
-            <li><Link href="/portfolio" className="hover:text-foreground">ผลงาน</Link></li>
-            <li><Link href="/demo" className="hover:text-foreground">ทดลองใช้งาน</Link></li>
-            <li><Link href="/blog" className="hover:text-foreground">บทความ</Link></li>
-            <li><Link href="/contact" className="hover:text-foreground">ติดต่อ</Link></li>
-          </ul>
-        </div>
-
-        <div>
+        <div className="md:col-span-2">
           <p className="mb-3 font-semibold">ติดต่อ</p>
           <ul className="space-y-2 text-sm text-muted">
             <li>

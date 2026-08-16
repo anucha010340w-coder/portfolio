@@ -383,35 +383,15 @@ export default function WalkingAvatar() {
             {/* Beam particles — floating up dots when beaming */}
             {beaming && (
               <g>
-                <circle cx="28" cy="76" r="2.5" fill="#c7d2fe">
+                <circle cx="32" cy="76" r="2.5" fill="#c7d2fe">
                   <animate attributeName="cy" values="78;48" dur="1.2s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" />
                   <animate attributeName="r" values="3;1" dur="1.2s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="40" cy="76" r="2" fill="#a5b4fc">
-                  <animate attributeName="cy" values="78;46" dur="1s" repeatCount="indefinite" begin="0.2s" />
-                  <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" begin="0.2s" />
-                  <animate attributeName="r" values="2.5;0.8" dur="1s" repeatCount="indefinite" begin="0.2s" />
-                </circle>
-                <circle cx="50" cy="76" r="2.8" fill="#ddd6fe">
-                  <animate attributeName="cy" values="78;48" dur="1.4s" repeatCount="indefinite" begin="0.5s" />
-                  <animate attributeName="opacity" values="0;1;0" dur="1.4s" repeatCount="indefinite" begin="0.5s" />
-                  <animate attributeName="r" values="3.2;1" dur="1.4s" repeatCount="indefinite" begin="0.5s" />
-                </circle>
-                <circle cx="34" cy="76" r="1.8" fill="#e0e7ff">
-                  <animate attributeName="cy" values="78;47" dur="1.1s" repeatCount="indefinite" begin="0.7s" />
-                  <animate attributeName="opacity" values="0;0.9;0" dur="1.1s" repeatCount="indefinite" begin="0.7s" />
-                  <animate attributeName="r" values="2.2;0.7" dur="1.1s" repeatCount="indefinite" begin="0.7s" />
-                </circle>
-                <circle cx="46" cy="76" r="2.2" fill="#c4b5fd">
-                  <animate attributeName="cy" values="78;47" dur="1.3s" repeatCount="indefinite" begin="0.4s" />
-                  <animate attributeName="opacity" values="0;1;0" dur="1.3s" repeatCount="indefinite" begin="0.4s" />
-                  <animate attributeName="r" values="2.8;0.8" dur="1.3s" repeatCount="indefinite" begin="0.4s" />
-                </circle>
-                <circle cx="42" cy="76" r="1.5" fill="#fbbf24">
-                  <animate attributeName="cy" values="78;48" dur="0.9s" repeatCount="indefinite" begin="0.6s" />
-                  <animate attributeName="opacity" values="0;0.8;0" dur="0.9s" repeatCount="indefinite" begin="0.6s" />
-                  <animate attributeName="r" values="2;0.5" dur="0.9s" repeatCount="indefinite" begin="0.6s" />
+                <circle cx="48" cy="76" r="2" fill="#a5b4fc">
+                  <animate attributeName="cy" values="78;46" dur="1s" repeatCount="indefinite" begin="0.3s" />
+                  <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" begin="0.3s" />
+                  <animate attributeName="r" values="2.5;0.8" dur="1s" repeatCount="indefinite" begin="0.3s" />
                 </circle>
               </g>
             )}
@@ -554,16 +534,6 @@ export default function WalkingAvatar() {
                   <animate attributeName="cx" values="145;145;145;145;125;118" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
                   <animate attributeName="cy" values="30;30;30;30;46;54" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
                   <animate attributeName="opacity" values="0;0;0;1;0.4;0" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
-                </circle>
-                <circle cx="145" cy="30" r="2.5" fill="#fde047">
-                  <animate attributeName="cx" values="145;145;145;145;162;170" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
-                  <animate attributeName="cy" values="30;30;30;30;44;52" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
-                  <animate attributeName="opacity" values="0;0;0;1;0.5;0" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
-                </circle>
-                <circle cx="145" cy="30" r="2" fill="#fff">
-                  <animate attributeName="cx" values="145;145;145;145;145;145" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
-                  <animate attributeName="cy" values="30;30;30;30;14;6" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
-                  <animate attributeName="opacity" values="0;0;0;1;0.3;0" keyTimes="0;0.6;0.63;0.68;0.85;1" dur="3.5s" repeatCount="1" />
                 </circle>
               </g>
             </svg>
