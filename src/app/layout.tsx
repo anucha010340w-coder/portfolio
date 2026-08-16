@@ -12,7 +12,6 @@ const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -24,8 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
 const notoSansThai = Noto_Sans_Thai({
   variable: "--font-thai",
   subsets: ["thai"],
-  display: "swap",
-  weight: ["400", "700"],
+  display: "optional",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {

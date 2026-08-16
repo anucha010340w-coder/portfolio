@@ -5,6 +5,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
 import ContactCTA from "@/components/ContactCTA";
 import { BreadcrumbSchema } from "@/components/Schema";
+import "@/app/prose-thai.css";
 
 type Props = PageProps<"/blog/[slug]">;
 

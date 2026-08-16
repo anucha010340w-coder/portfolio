@@ -4,6 +4,7 @@ import ContactCTA from "@/components/ContactCTA";
 import Reveal from "@/components/Reveal";
 import TypeReveal from "@/components/TypeReveal";
 import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
+import "@/app/prose-thai.css";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับผม",
