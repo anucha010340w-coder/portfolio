@@ -9,7 +9,6 @@ const contacts = [
   { icon: Mail, href: `mailto:${siteConfig.email}`, label: "อีเมล", color: "bg-blue-600" },
   { icon: LineIcon, href: `https://line.me/ti/p/~${siteConfig.lineId}`, label: "LINE", color: "bg-[#06C755]" },
   { icon: FacebookIcon, href: siteConfig.facebook, label: "Facebook", color: "bg-[#1877F2]" },
-  { icon: FacebookIcon, href: siteConfig.facebookPage, label: "Facebook Page", color: "bg-[#1877F2]" },
 ];
 
 export default function FloatingContacts() {
