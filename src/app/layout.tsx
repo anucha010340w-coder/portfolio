@@ -5,13 +5,14 @@ import { siteConfig } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContacts from "@/components/FloatingContacts";
-import WalkingAvatar from "@/components/WalkingAvatar";
 import { ProfessionalServiceSchema, WebsiteSchema } from "@/components/Schema";
+import LazyWalkingAvatar from "@/components/LazyWalkingAvatar";
 
 const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -24,7 +25,7 @@ const notoSansThai = Noto_Sans_Thai({
   variable: "--font-thai",
   subsets: ["thai"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -126,7 +127,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <Footer />
         <FloatingContacts />
-        <WalkingAvatar />
+        <LazyWalkingAvatar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
