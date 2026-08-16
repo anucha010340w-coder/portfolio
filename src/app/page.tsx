@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { services } from "@/lib/services";
@@ -7,11 +8,18 @@ import { getAllPosts } from "@/lib/posts";
 import { serviceIconMap } from "@/lib/serviceIcons";
 import LazyParticles from "@/components/LazyParticles";
 import ContactCTA from "@/components/ContactCTA";
-import ProjectSlideshow from "@/components/ProjectSlideshow";
 import Reveal from "@/components/Reveal";
 import TypeReveal from "@/components/TypeReveal";
-import Terminal from "@/components/Terminal";
-import Gallery from "@/components/Gallery";
+
+const Terminal = dynamic(() => import("@/components/Terminal"), {
+  loading: () => <div className="h-64 rounded-lg bg-black" />,
+});
+const ProjectSlideshow = dynamic(() => import("@/components/ProjectSlideshow"), {
+  loading: () => <div className="h-64 animate-pulse rounded-lg bg-card/40" />,
+});
+const Gallery = dynamic(() => import("@/components/Gallery"), {
+  loading: () => <div className="h-64 animate-pulse rounded-lg bg-card/40" />,
+});
 
 export const metadata: Metadata = {
   title: `AW Dev | ${siteConfig.role}`,
