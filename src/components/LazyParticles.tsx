@@ -26,7 +26,12 @@ export default function LazyParticles() {
       window.addEventListener(e, start, { once: true, passive: true })
     );
 
-    return () => EVENTS.forEach((e) => window.removeEventListener(e, start));
+    const timeout = setTimeout(start, 3000);
+
+    return () => {
+      EVENTS.forEach((e) => window.removeEventListener(e, start));
+      clearTimeout(timeout);
+    };
   }, []);
 
   if (!show) return <div className="h-full w-full bg-black" />;
