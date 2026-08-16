@@ -26,7 +26,7 @@ export default function LazyParticles() {
       window.addEventListener(e, start, { once: true, passive: true })
     );
 
-    const timeout = setTimeout(start, 3000);
+    const timeout = setTimeout(start, 2000);
 
     return () => {
       EVENTS.forEach((e) => window.removeEventListener(e, start));
