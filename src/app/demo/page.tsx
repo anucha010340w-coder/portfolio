@@ -15,11 +15,13 @@ export const metadata: Metadata = {
     title: "ทดลองใช้งานระบบตัวอย่าง | AW Dev",
     description: "ทดลองใช้งานระบบตัวอย่าง — POS ร้านอาหาร, ร้านค้าออนไลน์, ระบบจองคิว, เว็บบริษัท, ระบบคลังสินค้า, แอพจัดส่ง แบบ interactive เต็มรูปแบบ",
     url: `${siteConfig.url}/demo`,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ทดลองใช้งานระบบตัวอย่าง | AW Dev" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ทดลองใช้งานระบบตัวอย่าง | AW Dev",
     description: "ทดลองใช้งานระบบตัวอย่าง — POS ร้านอาหาร, ร้านค้าออนไลน์, ระบบจองคิว, เว็บบริษัท, ระบบคลังสินค้า, แอพจัดส่ง แบบ interactive เต็มรูปแบบ",
+    images: ["/opengraph-image"],
   },
 };
 

@@ -10,11 +10,13 @@ export const metadata: Metadata = {
     title: "ทดลองระบบจองคิว | AW Dev",
     description: "ทดลองใช้งานระบบจองคิว — เลือกบริการ, เลือกวัน/เวลา, กรอกข้อมูล, ยืนยันการจอง, แจ้งเตือน แบบ interactive",
     url: `${siteConfig.url}/demo/booking`,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ทดลองระบบจองคิว | AW Dev" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ทดลองระบบจองคิว | AW Dev",
     description: "ทดลองใช้งานระบบจองคิว — เลือกบริการ, เลือกวัน/เวลา, กรอกข้อมูล, ยืนยันการจอง, แจ้งเตือน แบบ interactive",
+    images: ["/opengraph-image"],
   },
 };
 

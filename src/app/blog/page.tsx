@@ -15,11 +15,13 @@ export const metadata: Metadata = {
     title: `บทความ | ${siteConfig.name}`,
     description: `บทความและความรู้จาก ${siteConfig.name} เกี่ยวกับการทำเว็บ ซอฟต์แวร์ SEO และธุรกิจดิจิทัล`,
     url: `${siteConfig.url}/blog`,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `บทความ | ${siteConfig.name}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `บทความ | ${siteConfig.name}`,
     description: `บทความและความรู้จาก ${siteConfig.name} เกี่ยวกับการทำเว็บ ซอฟต์แวร์ SEO และธุรกิจดิจิทัล`,
+    images: ["/opengraph-image"],
   },
 };
 

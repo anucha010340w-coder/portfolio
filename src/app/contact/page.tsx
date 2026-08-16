@@ -16,11 +16,13 @@ export const metadata: Metadata = {
     title: `ติดต่อ | ${siteConfig.name}`,
     description: `ติดต่อ ${siteConfig.name} — โทร อีเมล LINE Facebook และ GitHub ปรึกษาฟรี ไม่มีค่าใช้จ่าย`,
     url: `${siteConfig.url}/contact`,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `ติดต่อ | ${siteConfig.name}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `ติดต่อ | ${siteConfig.name}`,
     description: `ติดต่อ ${siteConfig.name} — โทร อีเมล LINE Facebook และ GitHub ปรึกษาฟรี ไม่มีค่าใช้จ่าย`,
+    images: ["/opengraph-image"],
   },
 };
 

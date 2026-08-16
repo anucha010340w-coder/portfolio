@@ -18,11 +18,13 @@ export const metadata: Metadata = {
     title: `บริการ | ${siteConfig.name}`,
     description: `บริการของ ${siteConfig.name} — รับทำเว็บแอพ เว็บไซต์ธุรกิจ แอพมือถือ ระบบ POS ระบบตามสั่ง และที่ปรึกษา IT`,
     url: `${siteConfig.url}/services`,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `บริการ | ${siteConfig.name}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `บริการ | ${siteConfig.name}`,
     description: `บริการของ ${siteConfig.name} — รับทำเว็บแอพ เว็บไซต์ธุรกิจ แอพมือถือ ระบบ POS ระบบตามสั่ง และที่ปรึกษา IT`,
+    images: ["/opengraph-image"],
   },
 };
 

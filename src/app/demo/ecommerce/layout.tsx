@@ -10,11 +10,13 @@ export const metadata: Metadata = {
     title: "ทดลองร้านค้าออนไลน์ | AW Dev",
     description: "ทดลองใช้งานร้านค้าออนไลน์ — ค้นหา, กรองหมวด, ดูสินค้า, ใส่ตะกร้า, เช็คเอาท์, เลือกวิธีจัดส่ง แบบ interactive",
     url: `${siteConfig.url}/demo/ecommerce`,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ทดลองร้านค้าออนไลน์ | AW Dev" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ทดลองร้านค้าออนไลน์ | AW Dev",
     description: "ทดลองใช้งานร้านค้าออนไลน์ — ค้นหา, กรองหมวด, ดูสินค้า, ใส่ตะกร้า, เช็คเอาท์, เลือกวิธีจัดส่ง แบบ interactive",
+    images: ["/opengraph-image"],
   },
 };
 
