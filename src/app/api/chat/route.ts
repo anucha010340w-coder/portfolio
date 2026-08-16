@@ -55,13 +55,14 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY?.trim();
     if (!apiKey) {
       return NextResponse.json(
         { error: "API key not configured" },
         { status: 500 }
       );
     }
+    console.log("API key length:", apiKey.length, "starts with:", apiKey.slice(0, 10));
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json(
@@ -132,7 +133,7 @@ export async function POST(req: NextRequest) {
       const err = await res.text();
       console.error("Gemini API error:", err);
       return NextResponse.json(
-        { error: "เกิดข้อผิดพลาด ลองใหม่อีกครั้ง" },
+        { error: `Gemini API error: ${err.slice(0, 300)}` },
         { status: 500 }
       );
     }
@@ -150,9 +151,11 @@ export async function POST(req: NextRequest) {
       .trim();
 
     return NextResponse.json({ reply: text });
-  } catch {
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.error("Chat API error:", msg);
     return NextResponse.json(
-      { error: "เกิดข้อผิดพลาด ลองใหม่อีกครั้ง" },
+      { error: `Server error: ${msg.slice(0, 300)}` },
       { status: 500 }
     );
   }
