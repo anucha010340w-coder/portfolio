@@ -22,13 +22,13 @@ const Gallery = dynamic(() => import("@/components/Gallery"), {
 });
 
 export const metadata: Metadata = {
-  title: `AW Dev | ${siteConfig.role}`,
-  description: siteConfig.description,
+  title: `รับทำเว็บไซต์ แอพ ระบบ POS | ${siteConfig.name} — AW Dev`,
+  description: `รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง โดย ${siteConfig.name} — Full-Stack Developer ใช้ Next.js React TypeScript โหลดเร็ว ติดอันดับ Google ส่งงานเร็ว ราคาคุยได้ ปรึกษาฟรี ทัก LINE ได้เลย`,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    title: `AW Dev | ${siteConfig.role}`,
-    description: siteConfig.description,
+    title: `รับทำเว็บไซต์ แอพ ระบบ POS | ${siteConfig.name} — AW Dev`,
+    description: `รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง โดย ${siteConfig.name} — ส่งงานเร็ว ราคาคุยได้ ปรึกษาฟรี`,
     url: siteConfig.url,
     siteName: "AW Dev",
     images: [
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `AW Dev | ${siteConfig.role}`,
+        alt: "AW Dev — รับทำเว็บไซต์ แอพ ระบบ POS ระบบตามสั่ง",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `AW Dev | ${siteConfig.role}`,
-    description: siteConfig.description,
+    title: `รับทำเว็บไซต์ แอพ ระบบ POS | ${siteConfig.name} — AW Dev`,
+    description: `รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง โดย ${siteConfig.name} — ส่งงานเร็ว ราคาคุยได้`,
     images: ["/opengraph-image"],
   },
 };
@@ -276,6 +276,28 @@ export default function Home() {
               อ่านบทความทั้งหมด
             </Link>
           </div>
+        </Reveal>
+      </section>
+
+      {/* SEO Content */}
+      <section className="mx-auto max-w-4xl px-4 py-16">
+        <Reveal>
+          <h2 className="text-2xl font-bold">รับทำเว็บไซต์ แอพ และระบบ โดย {siteConfig.name}</h2>
+          <p className="mt-4 text-muted">
+            สวัสดีครับ ผม {siteConfig.name} หรือ AW Dev — Full-Stack Developer รับทำเว็บไซต์
+            เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง และระบบธุรกิจทุกประเภท
+            ใช้เทคโนโลยี Next.js React TypeScript ทันสมัย โหลดเร็ว ติดอันดับ Google ดี
+            รับงานตั้งแต่เว็บ 1 หน้า (Landing Page) ไปจนถึงระบบเต็มรูปแบบ
+            ส่งงานเร็ว ราคาคุยได้ ปรึกษาฟรี ทัก LINE ได้เลย
+          </p>
+        </Reveal>
+        <Reveal delay={100}>
+          <p className="mt-4 text-sm text-muted">
+            บริการครอบคลุม: รับทำเว็บไซต์ธุรกิจ รับทำเว็บบริษัท รับทำเว็บขายของ
+            รับทำเว็บแอพ รับทำแอพมือถือ iOS Android รับทำระบบ POS ร้านอาหาร
+            รับทำระบบจองคิว รับทำระบบคลังสินค้า รับทำระบบ CRM รับทำระบบ ERP
+            รับทำระบบตามสั่ง รับเขียนโปรแกรม และที่ปรึกษา IT
+          </p>
         </Reveal>
       </section>
 

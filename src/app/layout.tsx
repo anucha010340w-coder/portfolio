@@ -30,10 +30,10 @@ const notoSansThai = Noto_Sans_Thai({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `AW Dev | ${siteConfig.role}`,
-    template: `%s | AW Dev`,
+    default: `รับทำเว็บไซต์ แอพ ระบบ POS | ${siteConfig.name} — AW Dev`,
+    template: `%s | AW Dev — รับทำเว็บ แอพ ระบบ`,
   },
-  description: siteConfig.description,
+  description: `รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง โดย ${siteConfig.name} — Full-Stack Developer ใช้ Next.js React TypeScript โหลดเร็ว ติดอันดับ Google ส่งงานเร็ว ราคาคุยได้ ปรึกษาฟรี`,
   keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
@@ -45,22 +45,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "th_TH",
     url: siteConfig.url,
-    title: `AW Dev | ${siteConfig.role}`,
-    description: siteConfig.description,
+    title: `รับทำเว็บไซต์ แอพ ระบบ POS | ${siteConfig.name} — AW Dev`,
+    description: `รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง โดย ${siteConfig.name} — ส่งงานเร็ว ราคาคุยได้ ปรึกษาฟรี`,
     siteName: "AW Dev",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `AW Dev | ${siteConfig.role}`,
+        alt: `AW Dev — รับทำเว็บไซต์ แอพ ระบบ POS ระบบตามสั่ง`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `AW Dev | ${siteConfig.role}`,
-    description: siteConfig.description,
+    title: `รับทำเว็บไซต์ แอพ ระบบ POS | ${siteConfig.name} — AW Dev`,
+    description: `รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง โดย ${siteConfig.name} — ส่งงานเร็ว ราคาคุยได้`,
     images: ["/opengraph-image"],
   },
   robots: {

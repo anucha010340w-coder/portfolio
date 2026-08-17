@@ -7,20 +7,20 @@ import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
 import "@/app/prose-thai.css";
 
 export const metadata: Metadata = {
-  title: "เกี่ยวกับผม",
-  description: `รู้จัก ${siteConfig.name} — ${siteConfig.role} ผู้รับทำเว็บ แอพ และระบบตามสั่ง`,
+  title: `เกี่ยวกับ ${siteConfig.name} — Full-Stack Developer รับทำเว็บ แอพ ระบบ POS`,
+  description: `รู้จัก ${siteConfig.name} (AW Dev) — Full-Stack Developer รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง มากว่า 5 ปี ใช้ Next.js React TypeScript Node.js ส่งงานเร็ว ราคาคุยได้ ดูแลหลังส่งมอบ`,
   alternates: { canonical: "/about" },
   openGraph: {
     type: "profile",
-    title: `เกี่ยวกับผม | ${siteConfig.name}`,
-    description: `รู้จัก ${siteConfig.name} — ${siteConfig.role} ผู้รับทำเว็บ แอพ และระบบตามสั่ง`,
+    title: `เกี่ยวกับ ${siteConfig.name} — Full-Stack Developer รับทำเว็บ แอพ ระบบ POS`,
+    description: `รู้จัก ${siteConfig.name} (AW Dev) — รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง มากว่า 5 ปี`,
     url: `${siteConfig.url}/about`,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `เกี่ยวกับผม | ${siteConfig.name}` }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `เกี่ยวกับ ${siteConfig.name} — Full-Stack Developer` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `เกี่ยวกับผม | ${siteConfig.name}`,
-    description: `รู้จัก ${siteConfig.name} — ${siteConfig.role} ผู้รับทำเว็บ แอพ และระบบตามสั่ง`,
+    title: `เกี่ยวกับ ${siteConfig.name} — Full-Stack Developer รับทำเว็บ แอพ ระบบ POS`,
+    description: `รู้จัก ${siteConfig.name} (AW Dev) — รับทำเว็บไซต์ เว็บแอพ แอพมือถือ ระบบ POS ระบบตามสั่ง มากว่า 5 ปี`,
     images: ["/opengraph-image"],
   },
 };

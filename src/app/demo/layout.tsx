@@ -13,10 +13,11 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
       {!isIndex && (
         <Link
           href="/demo"
-          className="fixed bottom-6 left-6 z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-lg transition-all hover:scale-110 hover:bg-accent"
+          className="fixed top-6 left-4 z-[70] flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2.5 text-white shadow-lg transition-all hover:scale-105 hover:bg-accent"
           aria-label="กลับหน้าเลือก Demo"
         >
           <ArrowLeft className="h-5 w-5" />
+          <span className="text-sm font-medium">กลับ</span>
         </Link>
       )}
       {children}

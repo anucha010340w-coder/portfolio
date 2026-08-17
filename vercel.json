@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/facebook-post/cron",
+      "schedule": "0 2 * * *"
+    }
+  ]
+}
