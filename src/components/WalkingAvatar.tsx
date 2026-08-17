@@ -49,11 +49,19 @@ export default function WalkingAvatar() {
   const [bubble, setBubble] = useState<string | null>(null);
   const [beaming, setBeaming] = useState(false);
   const [attacking, setAttacking] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const ufoRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const openRef = useRef(false);
   const bubbleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     openRef.current = open;
@@ -322,7 +330,7 @@ export default function WalkingAvatar() {
         {bubble && (
           <div
             className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-white px-3 py-1.5 text-center text-xs font-medium text-gray-700 shadow-lg"
-            style={{ animation: "bubble-pop 0.3s ease-out" }}>
+            style={{ animation: "bubble-pop 0.3s ease-out", transform: isMobile ? "translateX(-50%) scale(0.8)" : undefined }}>
             {bubble}
             <div
               className="absolute -bottom-1 left-1/2 -translate-x-1/2"
@@ -337,7 +345,7 @@ export default function WalkingAvatar() {
           </div>
         )}
 
-        <div className="relative" style={{ width: 80, height: 80, overflow: "visible" }}>
+        <div className="relative" style={{ width: 80, height: 80, overflow: "visible", transform: isMobile ? "scale(0.6)" : "none", transformOrigin: "center" }}>
 
           {/* Glow under UFO */}
           <div
